@@ -170,7 +170,7 @@ class SkinPack {
         geometry:
           "geometry.humanoid.custom" +
           (this.#skins[i][1].type === "slim" ? "Slim" : ""),
-        texture: this.#skins[i][0].name,
+        texture: this.#skins[i][1].name,
         type: "free",
       });
 
@@ -179,7 +179,7 @@ class SkinPack {
         `${skins.skins[i].localization_name}=${this.#skins[i][1].name}\n`;
 
       // Save image.
-      zip.file(this.#skins[i][0].name, this.#skins[i][0]);
+      zip.file(this.#skins[i][1].name, this.#skins[i][0]);
     }
 
     return await zip
